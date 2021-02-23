@@ -1,0 +1,13 @@
+<mat-card class="create-board-card" (click)="openDialog()">
+    <div class="create-board-header">
+        <h3>Create a new board...</h3>
+    </div>
+</mat-card>
+
+<div *ngFor="let board of boardCollections | async; let i = index">
+    <mat-card class="board-card" (click)="openBoard(board)">
+        <div class="board-header">
+            <h3>{{board.title}}</h3>
+        </div>
+    </mat-card>
+</div>

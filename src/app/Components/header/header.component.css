@@ -1,0 +1,7 @@
+.app-heading{
+    outline: white;
+}
+.app-heading a{
+    cursor: pointer;
+    text-decoration: none;
+}

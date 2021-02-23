@@ -1,0 +1,39 @@
+<div *ngIf="activeBoardData">
+    <div>
+        <mat-card class="active-board-titile">
+            <div>
+                <h3>{{activeBoardData.title}}</h3>
+            </div>
+        </mat-card>
+    </div>
+
+    <div cdkDropListGroup>
+        <mat-card class="list-card" *ngFor="let list of listCollection; let i = index" cdkDropList
+            [cdkDropListData]="list" (cdkDropListDropped)="dropListItem($event)" id="list_{{i+1}}">
+            <mat-card-header>
+                <mat-icon class="edit" (click)="openEditListDialog(list)">edit</mat-icon>
+                <mat-icon class="remove" (click)="removeList(list, i)">delete</mat-icon>
+                <mat-card-title>
+                    {{list.name}}
+                </mat-card-title>
+            </mat-card-header>
+            <hr />
+            <mat-form-field class="form-full-width">
+                <input matInput id="name" placeholder="Add a card..." [(ngModel)]="itemName[i]" autocomplete="off"
+                    (keyup.enter)="addItemInList(list.id, i)">
+            </mat-form-field>
+            <div cdkDrag (mouseenter)="getListIndex(i)" *ngFor="let item of list.list_items;let j = index">
+                <div class="list-items" [class.isDisabled]="item.isCompleted">
+                    {{item.name}}
+                    <mat-icon class="done" (click)="clickListItem(item)">done</mat-icon>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
+    <mat-card class="create-board-list" (click)="openAddListDialog()">
+        <div class="create-board-list-header">
+            <h3>Add list...</h3>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Creating a board</h1>
+<hr />
+<div mat-dialog-content>
+    <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="data" type="text" id="name" placeholder="Name" #name autocomplete="off">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button class="button-success" mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

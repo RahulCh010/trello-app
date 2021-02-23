@@ -1,0 +1,42 @@
+.create-board-card{
+    max-width: 350px;
+    height: 80px;
+    margin: 100px 20px 0 30px;
+    background: #9fe7a4;
+    float: left;
+}
+
+.create-board-header{
+    width: 350px;
+    height: 50px;
+}
+
+.create-board-card h3{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+}
+
+.board-card{
+    max-width: 350px;
+    height: 80px;
+    margin: 100px 20px 0 30px;
+    background: #efefef;
+    float: left;
+}
+
+.board-header{
+    width: 350px;
+    height: 50px;
+}
+
+.board-card h3{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+}
+
+.mat-card:hover{
+    cursor: pointer;
+    box-shadow: 0 8px 8px 8px rgba(0,0,0,.1), 0 8px 8px 0 rgba(0,0,0,.1), 0 8px 8px 0 rgba(0,0,0,.1);
+}
